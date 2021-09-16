@@ -5,19 +5,23 @@ import org.junit.jupiter.api.Test;
 
 class PersonTest {
 
+	static Person p;
+	static String nomTest = "Leo";
+	static int ageTest = 55;
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-
+		p = new Person(nomTest, ageTest);
 	}
 
 	@Test
 	void testGetAge() {
-		Person p = new Person();
-		p.name = "Leo";
-		p.age = 23;
-
-		//J'essaie d'écrire encore
-		assert(p.getAge() == 55);
+		assert(p.getAge() == ageTest);
 	}
+	
+	@Test
+	void testGetName() {
+		assert(p.getName() == nomTest);
+	}	
 
 }
